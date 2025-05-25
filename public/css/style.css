@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Instrument Sans', sans-serif;
+    line-height: 1.6;
+}
+
+nav.navbar {
+    padding: 1rem 2rem;
+    background: transparent !important;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.hero {
+    background: url('../images/cover/tourist-carrying-luggage.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 4rem 0;
+    height: 100vh;
+    margin-top: -58px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+}
