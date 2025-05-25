@@ -26,16 +26,16 @@
 
     {{-- Navbar bootsatp --}}
     <!-- Bootstrap 5 -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container bg-transparent">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: transparent;">
+        <div class="container">
             <a class="navbar-brand fw-bold" href="#">Nanhonia Travel</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Início</a>
                     </li>
@@ -59,29 +59,34 @@
                         <a class="nav-link" href="#">Visão</a>
                     </li>
                 </ul>
-
-                <div class="d-flex ms-lg-3">
-                    <a href="#" class="btn btn-outline-primary me-2">Login</a>
-                    <a href="#" class="btn btn-primary">Registar</a>
-                </div>
+            </div>
+            <div class="d-flex ms-lg-auto">
+                <a href="#" class="btn btn-outline-primary me-2">Login</a>
+                <a href="#" class="btn btn-primary">Registar</a>
             </div>
         </div>
     </nav>
 
 
+
     {{-- Hero Section --}}
     <section class="hero">
-        <div class="container">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="{{ asset('video/0 Airport Travel 3840X2160.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="hero-content container">
             <div class="row">
                 <div class="col-md-6">
                     <h1>Welcome to Laravel</h1>
                     <p class="lead">This is a simple hero section to showcase the power of Laravel.</p>
                     <a href="#" class="btn btn-primary">Get Started</a>
                 </div>
-
             </div>
         </div>
     </section>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
