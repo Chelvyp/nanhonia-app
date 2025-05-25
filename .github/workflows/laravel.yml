@@ -1,4 +1,4 @@
-name: Deploy via FTPS com lftp
+name: Deploy via FTPS Explícito com lftp
 
 on:
   push:
@@ -15,19 +15,20 @@ jobs:
       - name: Instalar lftp
         run: sudo apt-get update && sudo apt-get install -y lftp
 
-      - name: Deploy via lftp FTPS
+      - name: Deploy via lftp FTPS Explícito (StartTLS)
         env:
           FTP_USER: ${{ secrets.FTP_USER }}
           FTP_PASS: ${{ secrets.FTP_PASS }}
           FTP_HOST: ${{ secrets.FTP_HOST }}
         run: |
-          lftp -u "$FTP_USER","$FTP_PASS" -p 21 ftps://$FTP_HOST <<EOF
-            set ftp:ssl-force true          # Força usar TLS
-            set ftp:ssl-protect-data true   # Protege canal de dados
-            set ssl:verify-certificate no   # Ignora erro certificado
-            mirror -R --delete ./ /         # Upload recursivo, apaga arquivos removidos
+          lftp -u "$FTP_USER","$FTP_PASS" -p 21 ftp://$FTP_HOST <<EOF
+            set ftp:ssl-auth TLS           # Usa FTPS Explícito (StartTLS)
+            set ftp:ssl-force true         # Força TLS
+            set ftp:ssl-protect-data true  # Protege canal de dados
+            set ssl:verify-certificate no  # Ignora erro de certificado
+            mirror -R --delete ./ /        # Upload recursivo e apaga arquivos removidos
             quit
           EOF
 
       - name: Finalizar
-        run: echo "Deploy FTPS via lftp concluído com sucesso!"
+        run: echo "Deploy FTPS Explícito via lftp concluído!"
