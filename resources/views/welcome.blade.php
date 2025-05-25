@@ -105,7 +105,7 @@
                         <img src="https://img.freepik.com/free-photo/crossroad-car-safari-scene_23-2151822322.jpg?uid=R22963724&ga=GA1.1.138227323.1748126761&semt=ais_hybrid&w=740"
                             class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title">Agência de viagens</h5>
                             <h3 class="card-subtitle">Card subtitle</h3>
                             <p class="card-text">
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, reprehenderit? Earum
@@ -118,7 +118,7 @@
                         <img src="https://img.freepik.com/free-photo/crossroad-car-safari-scene_23-2151822322.jpg?uid=R22963724&ga=GA1.1.138227323.1748126761&semt=ais_hybrid&w=740"
                             class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title">Turismo</h5>
                             <h3 class="card-subtitle">Card subtitle</h3>
                             <p class="card-text">
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, reprehenderit? Earum
