@@ -1,26 +1,25 @@
-name: CI/CD FTP Deploy
+name: Deploy via SFTP
 
 on:
   push:
-    branches: ["main"]
+    branches: [main]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout do código
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Deploy via FTPS
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Setup SSH key
+        uses: webfactory/ssh-agent@v0.8.1
         with:
-          server: ftp.nanhoniatravel.com
-          username: ${{ secrets.FTP_USER }}     # travel@nanhoniatravel.com
-          password: ${{ secrets.FTP_PASS }}
-          port: 21
-          protocol: ftps
-          server-dir: /
-          local-dir: ./
-          security: loose                      # OU loose, se usares certificado self-signed
-          dangerous-clean-slate: true
+          ssh-private-key: ${{ secrets.SFTP_PRIVATE_KEY }}
+
+      - name: Deploy files via SFTP
+        run: |
+          sftp -o StrictHostKeyChecking=no -P 22 travel@nanhoniatravel.com << 'EOF'
+          put -r * /
+          bye
+          EOF
