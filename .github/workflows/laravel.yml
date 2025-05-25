@@ -19,9 +19,7 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
           port: 21
-          protocol: ftps-legacy
-          git-ftp-args: --insecure
-          git-ftp-branch: main 
+          protocol: ftps-legacy 
           server-dir: /
           local-dir: ./ 
           security: loose 
