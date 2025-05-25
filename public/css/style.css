@@ -7,8 +7,15 @@ body {
     line-height: 1.6;
 }
 
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .navbar {
-    background: transparent !important;
+    background: none !important;
     z-index: 10;
 }
 
@@ -27,6 +34,11 @@ nav.navbar .navbar-brand {
 
 nav.navbar .navbar-brand:hover {
     color: #fff;
+}
+
+nav.navbar .navbar-nav {
+    gap: 2rem;
+    /* espaço horizontal entre os itens */
 }
 
 nav.navbar .navbar-nav .nav-link {
@@ -52,10 +64,6 @@ nav.navbar .navbar-toggler-icon {
     position: relative;
     height: 100vh;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     color: white;
     padding: 0 2rem;
 }
@@ -84,12 +92,43 @@ nav.navbar .navbar-toggler-icon {
 .hero-content {
     position: relative;
     z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: start;
+    justify-content: center;
+    height: 100%;
 }
 
 .hero h1 {
     font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #e64a19;
 }
 
 .hero p {
     font-size: 1.25rem;
+}
+
+.hero .btn {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    border: #e64a19 2px solid;
+    /* outline btn */
+    /* outline btn */
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #e64a19;
+    transform: translateY(-2px);
 }

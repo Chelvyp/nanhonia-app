@@ -26,7 +26,7 @@
 
     {{-- Navbar bootsatp --}}
     <!-- Bootstrap 5 -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: transparent;">
+    <nav class="navbar navbar-expand-lg" style="background: none !important;">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">Nanhonia Travel</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -39,7 +39,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Início</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="cursosDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Cursos
@@ -48,6 +48,9 @@
                             <li><a class="dropdown-item" href="#">Presenciais</a></li>
                             <li><a class="dropdown-item" href="#">Online</a></li>
                         </ul>
+                    </li> --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Princípios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Sobre</a>
@@ -72,24 +75,81 @@
     {{-- Hero Section --}}
     <section class="hero">
         <video autoplay muted loop playsinline class="hero-video">
-            <source src="{{ asset('video/0 Airport Travel 3840X2160.mp4') }}" type="video/mp4">
+            <source src="{{ asset('video/6268786 Woman Passport 3840X2160.mp4') }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
         <div class="hero-content container">
             <div class="row">
-                <div class="col-md-6">
-                    <h1>Welcome to Laravel</h1>
-                    <p class="lead">This is a simple hero section to showcase the power of Laravel.</p>
-                    <a href="#" class="btn btn-primary">Get Started</a>
+                <div class="col-md-12">
+                    <h1>NANHONIA TRAVEL</h1>
+                    <p class="lead">AGÊNCIA DE VIAGENS & TURISMO, RENT A CAR</p>
+
+                </div>
+                <div class="col-md-12">
+                    <a href="#" class="btn btn-primary btn-lg">Reservar</a>
+
                 </div>
             </div>
         </div>
     </section>
 
+    {{-- some places with cards bac --}}
+    <section class="places">
+        <div class="container">
+            <h2 class="text-center mb-4">Alguns Lugares</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="{{ asset('images/place1.jpg') }}" class="card-img-top" alt="Place 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Praia de Ponta Negra</h5>
+                            <p class="card-text">Uma das praias mais famosas de Natal, conhecida por sua beleza natural
+                                e
+                                vida noturna vibrante.</p>
+                            <a href="#" class="btn btn-primary">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="{{ asset('images/place2.jpg') }}" class="card-img-top" alt="Place 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Parque Nacional de Jericoacoara</h5>
+                            <p class="card-text">Um paraíso para os amantes da natureza, com dunas, lagoas e uma
+                                atmosfera relaxante.</p>
+                            <a href="#" class="btn btn-primary">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="{{ asset('images/place3.jpg') }}" class="card-img-top" alt="Place 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Centro Histórico de Olinda</h5>
+                            <p class="card-text">Um Patrimônio Mundial da UNESCO, famoso por sua arquitetura colonial e
+                                festivais culturais.</p>
+                            <a href="#" class="btn btn-primary">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- Footer --}}
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0">© 2023 Nanhonia Travel. Todos os direitos reservados.</p>
+            <p class="mb-0">Desenvolvido por <a href="#" class="text-white">Seu Nome</a></p>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-7+9z4b1e8f2a5c8d6
 
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+
+                                            <script src="
+        https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js"
