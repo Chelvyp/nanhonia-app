@@ -1,4 +1,4 @@
-name: Deploy via FTPS Robust
+name: Deploy via FTPS com lftp
 
 on:
   push:
@@ -12,20 +12,22 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v4
 
-      - name: Configurar FTP Deploy FTPS
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          port: 21
-          protocol: ftps
-          security: loose             # Ignora certificado inválido, mas mantém TLS
-          server-dir: /               # Pasta destino no servidor
-          local-dir: ./               # Pasta local a subir
-          dry-run: false              # Se true, só simula o deploy
-          dangerous-clean-slate: true # Limpa o que tem no servidor antes do upload (cuidado!)
-          git-ftp-args: --verbose     # Mais detalhes no log
+      - name: Instalar lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Deploy via lftp FTPS
+        env:
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASS: ${{ secrets.FTP_PASS }}
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+        run: |
+          lftp -u "$FTP_USER","$FTP_PASS" -p 21 ftps://$FTP_HOST <<EOF
+            set ftp:ssl-force true          # Força usar TLS
+            set ftp:ssl-protect-data true   # Protege canal de dados
+            set ssl:verify-certificate no   # Ignora erro certificado
+            mirror -R --delete ./ /         # Upload recursivo, apaga arquivos removidos
+            quit
+          EOF
 
       - name: Finalizar
-        run: echo "Deploy FTPS concluído com sucesso!"
+        run: echo "Deploy FTPS via lftp concluído com sucesso!"
