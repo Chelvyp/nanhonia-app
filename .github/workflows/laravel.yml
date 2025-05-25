@@ -1,27 +1,26 @@
-name: Deploy via SFTP
+name: CI/CD FTP Deploy
 
 on:
   push:
-    branches: [main]
+    branches: ["main"]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout do código
         uses: actions/checkout@v4
 
-      - name: Setup SSH key manual
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SFTP_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -p 21 nanhoniatravel.com >> ~/.ssh/known_hosts
-
-      - name: Deploy files via SFTP
-        run: |
-          sftp -o StrictHostKeyChecking=no -P 21 travel@nanhoniatravel.com << 'EOF'
-          put -r * /
-          bye
-          EOF
+      - name: Deploy via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          port: 21
+          protocol: ftps
+          server-dir: /
+          local-dir: ./
+          security: loose
+          dangerous-clean-slate: true
