@@ -1,3 +1,32 @@
+:root {
+    /* Cores principais */
+    --primary-blue: #1c4edf;
+    /* Azul Royal */
+    --deep-blue: #061c5c;
+    /* Azul Escuro */
+    --lime-green: #8ed101;
+    /* Verde Limão */
+    --soft-green: #a7dc4b;
+    /* Verde Suave */
+
+    /* Cores de texto */
+    --text-dark: #1b1f23;
+    --text-light: #f5f5f5;
+    --text-blue: #1c4edf;
+    --text-green: #8ed101;
+
+    /* Cores de fundo */
+    --bg-light: #ffffff;
+    --bg-dark: #0e0e0e;
+    --bg-gradient: linear-gradient(135deg, #1c4edf, #8ed101);
+
+    /* Cores auxiliares */
+    --accent-blue: #3a78e0;
+    --accent-green: #b5ec5f;
+    --gray-light: #e4e4e4;
+    --gray-dark: #333;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -5,6 +34,8 @@
 body {
     font-family: 'Instrument Sans', sans-serif;
     line-height: 1.6;
+    background: var(--bg-light);
+    color: var(--text-dark);
 }
 
 html,
@@ -15,9 +46,42 @@ body {
 }
 
 .navbar {
-    background: none !important;
-    z-index: 10;
+    background: var(--bg-gradient);
+    color: var(--text-light);
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+
 }
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-blue);
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: white !important;
+    /* ou a cor que quiseres */
+}
+
+.navbar .nav-link:hover {
+    color: #ccc !important;
+}
+
 
 .nav-link {
     color: white !important;
@@ -66,6 +130,8 @@ nav.navbar .navbar-toggler-icon {
     overflow: hidden;
     color: white;
     padding: 0 2rem;
+    background: var(--bg-gradient);
+    color: var(--text-light);
 }
 
 .hero video.hero-video {
@@ -94,8 +160,8 @@ nav.navbar .navbar-toggler-icon {
     z-index: 3;
     display: flex;
     flex-direction: column;
-    align-items: start;
-    text-align: start;
+    align-items: center;
+    text-align: center;
     justify-content: center;
     height: 100%;
 }
@@ -105,30 +171,99 @@ nav.navbar .navbar-toggler-icon {
     margin-bottom: 1rem;
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    color: #e64a19;
+    color: var(--lime-green);
+    line-height: 1.2;
+    text-transform: uppercase;
 }
 
 .hero p {
     font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: var(--soft-green);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .hero .btn {
     margin-top: 1rem;
     padding: 0.75rem 1.5rem;
     font-size: 1.25rem;
-    background-color: transparent;
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-    border: #e64a19 2px solid;
-    /* outline btn */
-    /* outline btn */
-
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    background: var(--bg-gradient);
+    color: var(--text-light);
 }
 
 .hero .btn:hover {
-    background-color: #e64a19;
-    transform: translateY(-2px);
+    background: var(--accent-blue);
+    color: var(--text-light);
+}
+
+.places {
+    padding: 2rem;
+    background: var(--bg-light);
+    position: relative;
+}
+
+.places .container {
+    background: var(--deep-blue);
+    margin-top: -100px;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.custom-card {
+    position: relative;
+    border: none;
+    overflow: hidden;
+    height: 400px;
+    /* ajusta como quiser */
+    color: white;
+}
+
+.custom-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    filter: brightness(60%);
+    /* escurece a imagem pra texto sobressair */
+}
+
+.custom-card .card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background: #fff;
+    /* fundo sutil pra dar contraste */
+    padding: 1.5rem;
+}
+
+.custom-card .card-body h5 {
+    color: var(--text-blue);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.custom-card .card-body h3 {
+    color: var(--text-dark);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.custom-card .card-body p {
+    color: #666;
+    font-size: 1rem;
 }

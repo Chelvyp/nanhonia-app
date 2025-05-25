@@ -26,8 +26,8 @@
 
     {{-- Navbar bootsatp --}}
     <!-- Bootstrap 5 -->
-    <nav class="navbar navbar-expand-lg" style="background: none !important;">
-        <div class="container">
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container bg-transparent">
             <a class="navbar-brand fw-bold" href="#">Nanhonia Travel</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,39 +97,48 @@
     {{-- some places with cards bac --}}
     <section class="places">
         <div class="container">
-            <h2 class="text-center mb-4">Alguns Lugares</h2>
+            <h2 class="text-center mb-4">Nossos Serviços</h2>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="{{ asset('images/place1.jpg') }}" class="card-img-top" alt="Place 1">
+                <div class="card-group gap-4">
+
+                    <div class="card custom-card">
+                        <img src="https://img.freepik.com/free-photo/crossroad-car-safari-scene_23-2151822322.jpg?uid=R22963724&ga=GA1.1.138227323.1748126761&semt=ais_hybrid&w=740"
+                            class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Praia de Ponta Negra</h5>
-                            <p class="card-text">Uma das praias mais famosas de Natal, conhecida por sua beleza natural
-                                e
-                                vida noturna vibrante.</p>
-                            <a href="#" class="btn btn-primary">Ver mais</a>
+                            <h5 class="card-title">Card title</h5>
+                            <h3 class="card-subtitle">Card subtitle</h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, reprehenderit? Earum
+                                molestiae, dignissimos quasi pariatur soluta accusamus repellendus quisquam accusantium
+                                asperiores vitae, incidunt voluptas eius minima consequuntur nisi. Inventore, ab?
+                            </p>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="{{ asset('images/place2.jpg') }}" class="card-img-top" alt="Place 2">
+                    <div class="card custom-card">
+                        <img src="https://img.freepik.com/free-photo/crossroad-car-safari-scene_23-2151822322.jpg?uid=R22963724&ga=GA1.1.138227323.1748126761&semt=ais_hybrid&w=740"
+                            class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Parque Nacional de Jericoacoara</h5>
-                            <p class="card-text">Um paraíso para os amantes da natureza, com dunas, lagoas e uma
-                                atmosfera relaxante.</p>
-                            <a href="#" class="btn btn-primary">Ver mais</a>
+                            <h5 class="card-title">Card title</h5>
+                            <h3 class="card-subtitle">Card subtitle</h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, reprehenderit? Earum
+                                molestiae, dignissimos quasi pariatur soluta accusamus repellendus quisquam accusantium
+                                asperiores vitae, incidunt voluptas eius minima consequuntur nisi. Inventore, ab?
+                            </p>
+
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="{{ asset('images/place3.jpg') }}" class="card-img-top" alt="Place 3">
+                    <div class="card custom-card">
+                        <img src="https://img.freepik.com/free-photo/crossroad-car-safari-scene_23-2151822322.jpg?uid=R22963724&ga=GA1.1.138227323.1748126761&semt=ais_hybrid&w=740"
+                            class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Centro Histórico de Olinda</h5>
-                            <p class="card-text">Um Patrimônio Mundial da UNESCO, famoso por sua arquitetura colonial e
-                                festivais culturais.</p>
-                            <a href="#" class="btn btn-primary">Ver mais</a>
+                            <h5 class="card-title">Card title</h5>
+                            <h3 class="card-subtitle">Card subtitle</h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, reprehenderit? Earum
+                                molestiae, dignissimos quasi pariatur soluta accusamus repellendus quisquam accusantium
+                                asperiores vitae, incidunt voluptas eius minima consequuntur nisi. Inventore, ab?
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -144,12 +153,9 @@
         </div>
     </footer>
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-7+9z4b1e8f2a5c8d6
-
-
-
-                                            <script src="
-        https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-7+9z4b1e8f2a5c8d6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js"
