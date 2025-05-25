@@ -1,24 +1,25 @@
-name: Deploy via FTP
+name: CI/CD FTP Deploy
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
-  ftp-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout código
+      - name: Checkout do código
         uses: actions/checkout@v4
 
-      - name: Enviar arquivos via FTP
+      - name: Deploy via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          server-dir: /public_html/
-          protocol: ftps,
-          port: 21,
-          passive: true
+          port: 21
+          protocol: ftps 
+          server-dir: /
+          local-dir: ./ 
+          security: strict 
