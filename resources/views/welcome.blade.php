@@ -20,6 +20,7 @@
        
     @endif --}}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -39,24 +40,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Início</a>
                     </li>
-                    {{-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="cursosDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Cursos
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="cursosDropdown">
-                            <li><a class="dropdown-item" href="#">Presenciais</a></li>
-                            <li><a class="dropdown-item" href="#">Online</a></li>
-                        </ul>
-                    </li> --}}
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Princípios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sobre</a>
+                        <a class="nav-link" href="#">Quem somos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sobre</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Visão</a>
@@ -94,8 +86,45 @@
         </div>
     </section>
 
-    {{-- some places with cards bac --}}
-    <section class="places">
+
+    {{-- Services --}}
+    <section class="services">
+        <div class="container">
+            <div class="row">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{ asset('images/services/travel-adventure-with-baggage.jpg') }}"
+                                class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h1 class="card-title text-dark">Nossos Serviços</h1>
+                                {{-- List of services with divs --}}
+                                <div class="row mt-3">
+                                    <div class="col-md-12 mb-3">
+                                        <ul class="list-unstyled shadow-sm p-3">
+                                            <h5>Agência de viagens</h5>
+                                            <li><b>Passagens Aéreas:</b> Reservas e emissão de bilhetes nacionais e
+                                                internacionais.
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+    {{--  <section class="places">
         <div class="container">
             <h2 class="text-center mb-4">Nossos Serviços</h2>
             <div class="row">
@@ -144,7 +173,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     {{-- Footer --}}
     <footer class="bg-dark text-white text-center py-4">
         <div class="container">

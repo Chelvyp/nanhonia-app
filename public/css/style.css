@@ -267,3 +267,68 @@ nav.navbar .navbar-toggler-icon {
     color: #666;
     font-size: 1rem;
 }
+
+section.services {
+    padding: 1rem;
+    background: var(--bg-light);
+}
+
+section.services .card {
+    color: var(--text-light);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin: 1rem;
+    flex: 1 1 calc(33.333% - 2rem);
+    transition: transform 0.3s ease;
+}
+
+section.services .card:hover {
+    transform: translateY(-10px);
+}
+
+section.services .card h5 {
+    color: var(--text-blue);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+section.services .card p {
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+section.services .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    height: 75vh;
+    object-fit: cover;
+}
+
+section.services .list-unstyled {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+section.services .list-unstyled h5 {
+    color: var(--text-blue);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+}
+
+section.services .list-unstyled li {
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-size: 1rem;
+}
+
+section.services .list-unstyled li::before {
+    content: '•';
+    color: var(--text-blue);
+    margin-right: 0.5rem;
+}
