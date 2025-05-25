@@ -53,7 +53,10 @@
                         <a class="nav-link" href="#">Sobre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
+                        <a class="nav-link" href="#">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Visão</a>
                     </li>
                 </ul>
 
