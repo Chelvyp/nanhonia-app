@@ -19,7 +19,7 @@ jobs:
 
       - name: Deploy files via SFTP
         run: |
-          sftp -o StrictHostKeyChecking=no -P 22 travel@nanhoniatravel.com << 'EOF'
+          sftp -o StrictHostKeyChecking=no -P 21 travel@nanhoniatravel.com << 'EOF'
           put -r * /
           bye
           EOF
