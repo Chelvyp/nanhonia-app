@@ -22,6 +22,6 @@ jobs:
           protocol: ftp
           server-dir: /
           local-dir: ./
-          security: no
+          security: loose
           dangerous-clean-slate: true
 
