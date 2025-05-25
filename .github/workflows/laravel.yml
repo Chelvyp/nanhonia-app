@@ -15,13 +15,12 @@ jobs:
       - name: Deploy via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
+          server: ftp.nanhoniatravel.com
+          username: ${{ secrets.FTP_USER }}     # travel@nanhoniatravel.com
           password: ${{ secrets.FTP_PASS }}
           port: 21
-          protocol: ftp
+          protocol: ftps
           server-dir: /
           local-dir: ./
-          security: loose
+          security: strict                      # OU loose, se usares certificado self-signed
           dangerous-clean-slate: true
-
