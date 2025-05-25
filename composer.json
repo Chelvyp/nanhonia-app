@@ -54,7 +54,7 @@
             "@php artisan config:clear --ansi",
             "@php artisan test"
         ],
-        "dev": "npx concurrently -c \"#93c5fd,#c4b5fd,#fdba74\" \"php -S 127.0.0.1:9000 -t public\" \"php artisan queue:listen --tries=1\" \"npm run dev\" --names='server,queue,vite'"
+        "dev": "npx concurrently --names 'server,queue,vite' --kill-others --raw --timeout 0 -c \"#93c5fd,#c4b5fd,#fdba74\" \"php -S 127.0.0.1:9000 -t public\" \"php artisan queue:listen --tries=1\" \"npm run dev\""
     },
     "extra": {
         "laravel": {

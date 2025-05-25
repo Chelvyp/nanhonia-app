@@ -22,11 +22,11 @@ jobs:
           FTP_HOST: ${{ secrets.FTP_HOST }}
         run: |
           lftp -u "$FTP_USER","$FTP_PASS" -p 21 ftp://$FTP_HOST <<EOF
-            set ftp:ssl-auth TLS           # Usa FTPS Explícito (StartTLS)
-            set ftp:ssl-force true         # Força TLS
-            set ftp:ssl-protect-data true  # Protege canal de dados
-            set ssl:verify-certificate no  # Ignora erro de certificado
-            mirror -R --delete ./ /        # Upload recursivo e apaga arquivos removidos
+            set ftp:ssl-auth TLS
+            set ftp:ssl-force true
+            set ftp:ssl-protect-data true
+            set ssl:verify-certificate no
+            mirror -R --only-newer --parallel=5 ./ /
             quit
           EOF
 

@@ -75,9 +75,7 @@
                     <p class="lead">This is a simple hero section to showcase the power of Laravel.</p>
                     <a href="#" class="btn btn-primary">Get Started</a>
                 </div>
-                <div class="col-md-6">
-                    <img src="https://via.placeholder.com/500" alt="Hero Image" class="img-fluid">
-                </div>
+
             </div>
         </div>
     </section>
